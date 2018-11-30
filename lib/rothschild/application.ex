@@ -8,6 +8,7 @@ defmodule Rothschild.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
+      Plug.Adapters.Cowboy.child_spec(:http, Server.Router, [], [port: 4001])
       # Starts a worker by calling: Rothschild.Worker.start_link(arg)
       # {Rothschild.Worker, arg},
     ]

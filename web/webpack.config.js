@@ -19,7 +19,7 @@ module.exports = {
           {
             loader: "babel-loader",
             options: {
-              presets: [['jsxz',{dir: "nathan-dashboard.webflow"}]],
+              presets: [['jsxz',{dir: "rothschildish.webflow"}]],
               parserOpts: {
                 plugins: [
                   "jsx","flow","doExpressions","objectRestSpread","decorators","classProperties",
