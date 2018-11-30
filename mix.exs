@@ -1,14 +1,14 @@
-defmodule Rotschild.MixProject do
+defmodule Rothschild.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :rotschild,
+      app: :rothschild,
       version: "0.1.0",
       elixir: "~> 1.7",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env() == :prod,
-      webflow: %{project: "nathan-dashboard",login: "KBRW1", password: "2mKAsurIgaWebflow"},
+      webflow: %{project: "rothschildish", login: "___KBRW1", password: "___2mKAsurIgaWebflow"},
       deps: deps(),
     ]
   end
@@ -17,7 +17,7 @@ defmodule Rotschild.MixProject do
   def application do
     [
       extra_applications: [:logger,:cowboy,:inets],
-      mod: {Rotschild.Application, []},
+      mod: {Rothschild.Application, []},
     ]
   end
 
