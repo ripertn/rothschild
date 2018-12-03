@@ -28,3 +28,14 @@ use Mix.Config
 # here (which is why it is important to import them last).
 #
 #     import_config "#{Mix.env()}.exs"
+
+[
+  rothschild: [
+    sup: Rothschild.Supervisor,
+    env: :qa,
+    quandle_auth: %{
+      user: "",
+      pwd: "W9xXGfe7z-xpoB2My9zr"
+    },
+  ],
+]

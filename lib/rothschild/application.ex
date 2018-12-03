@@ -1,21 +1,24 @@
 defmodule Rothschild.Application do
-  # See https://hexdocs.pm/elixir/Application.html
-  # for more information on OTP Applications
-  @moduledoc false
-
   use Application
 
   def start(_type, _args) do
-    # List all child processes to be supervised
+    Rothschild.Supervisor.start_link([]) 
+  end
+
+end
+
+defmodule Rothschild.Supervisor do
+  use Supervisor
+
+  def start_link(_opt), do: Supervisor.start_link(__MODULE__, _opt, name: __MODULE__)
+  def init(_opt) do
     children = [
-      Plug.Adapters.Cowboy.child_spec(:http, Server.Router, [], [port: 4001])
-      # Starts a worker by calling: Rothschild.Worker.start_link(arg)
-      # {Rothschild.Worker, arg},
+      Plug.Adapters.Cowboy.child_spec(:http, Server.Router, [], [port: 4001]),
+      Wallet, # same as %{id: Wallet, start: {Wallet, :start_link, []}}
     ]
 
-    # See https://hexdocs.pm/elixir/Supervisor.html
-    # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Rothschild.Supervisor]
-    Supervisor.start_link(children, opts)
+    Supervisor.init(children, [strategy: :one_for_one, name: Rothschild.Supervisor])
+
+    # supervise(children, strategy: :simple_one_for_one)
   end
 end
