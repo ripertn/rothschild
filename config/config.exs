@@ -42,6 +42,6 @@ use Mix.Config
     otp_app: :rothschild,
     hot: Mix.env == :dev,
     pool_size: 3,
-    global_config: %{ }
+    global_config: %{}
   ]
 ]

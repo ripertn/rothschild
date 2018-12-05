@@ -1,5 +1,6 @@
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 var path = require('path')
+var webpack = require('webpack')
 
 var client_config = {
   devtool: 'source-map',
@@ -12,7 +13,7 @@ var client_config = {
     publicPath: '/public/'
   }, 
   plugins: [
-    new ExtractTextPlugin({filename: "main.css"}),
+    new ExtractTextPlugin({filename: "main.css"}),new webpack.IgnorePlugin(/vertx/)
   ],
   module: {
     loaders: [
@@ -34,9 +35,9 @@ var client_config = {
               }
             }
           }
-        ]
+        ],
           //loader: 'babel-loader',
-          //exclude: /node_modules/,
+        exclude: /node_modules/
           //query: {
           //presets: ['es2015', 'react']
       },
