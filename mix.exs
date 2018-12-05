@@ -10,13 +10,14 @@ defmodule Rothschild.MixProject do
       start_permanent: Mix.env() == :prod,
       webflow: %{project: "rothschildish", login: "___KBRW1", password: "___2mKAsurIgaWebflow"},
       deps: deps(),
+      compilers: [:reaxt_webpack] ++ Mix.compilers,
     ]
   end
 
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger,:cowboy,:inets],
+      extra_applications: [:logger,:cowboy,:inets,:reaxt,:eex],
       mod: {Rothschild.Application, []},
     ]
   end
@@ -26,9 +27,10 @@ defmodule Rothschild.MixProject do
     [
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
-      {:cowboy, "~> 1.1.2"},
+      {:cowboy, "~> 1.1.2", override: true},
       {:plug, "~> 1.3.4"},
-      {:poison, "~> 3.1"},
+      {:poison, "~> 3.1", override: true},
+      {:reaxt, "~> 2.0", github: "kbrw/reaxt"},
     ]
   end
 end

@@ -429,9 +429,7 @@ function onPathChange() {
 
   addRemoteProps(browserState).then(
     (props)=>{
-      /*console.log("-------------BROWSER STATE IS----------")
-      browserState = props
-      console.log(browserState)*/
+      //console.log("-------------BROWSER STATE IS----------" + props)
       ReactDOM.render(<Child {...browserState}/>, document.getElementById('root'))
       document.getElementById("search-2").value = qs["custom.customer.last_name"] || ""
     },(res)=>{

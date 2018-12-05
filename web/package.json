@@ -20,9 +20,11 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "when": "^3.7.8",
-    "xhr2": "^0.1.4"
+    "xhr2": "^0.1.4",
+    "webpack": "^3.0.0"
   },
   "devDependencies": {
+    "reaxt": "file:reaxt.tgz",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.7.0",
@@ -34,8 +36,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^2.0.0",
     "jsx": "^0.9.89",
-    "jsxz": "^0.1.11",
-    "webpack": "^3.0.0"
+    "jsxz": "^0.1.11"
   },
   "author": "Nathan",
   "license": "ISC",

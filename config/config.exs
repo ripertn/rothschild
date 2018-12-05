@@ -38,4 +38,10 @@ use Mix.Config
       pwd: "W9xXGfe7z-xpoB2My9zr"
     },
   ],
+  reaxt: [
+    otp_app: :rothschild,
+    hot: Mix.env == :dev,
+    pool_size: 3,
+    global_config: %{ }
+  ]
 ]
