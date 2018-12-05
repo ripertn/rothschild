@@ -3,6 +3,8 @@
 /priv/
 /web/node_modules/
 /web/package-lock.json
+.formatter.exs
+.tool-versions
 
 # If you run "mix test --cover", coverage assets end up here.
 /cover/
